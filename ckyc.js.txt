@@ -1,0 +1,18 @@
+const { create } = require('xmlbuilder2');
+
+// Create the root element
+const xml = create({
+  version: '1.0',
+  encoding: 'UTF-8',
+  standalone: 'yes'
+}).ele('PID_DATA');
+
+// Add child elements
+xml.ele('DATE_TIME', '20-05-2021 17:15:57');
+xml.ele('ID_NO', 'D4567890');
+xml.ele('ID_TYPE', 'A');
+
+// Get the XML string
+const xmlString = xml.end({ prettyPrint: true });
+
+console.log(xmlString);
